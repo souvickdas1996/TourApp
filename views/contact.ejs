@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%-include('common/head')%>
+
+<body>
+	<!-- Header -->
+	<%-include('common/nav')%>
+
+
+	<!-- Banner -->
+	<section class="tm-banner">
+		<!-- Flexslider -->
+		<div class="flexslider flexslider-banner">
+		  <ul class="slides">
+		    <li>
+			    <div class="tm-banner-inner">
+					<h1 class="tm-banner-title">Your <span class="tm-yellow-text">Special</span> Tour</h1>
+					<p class="tm-banner-subtitle">For Upcoming Holiday Offers</p>
+					<a href="#more" class="tm-banner-link">Sign Up</a>	
+				</div>
+				<img src="img/banner-3.jpg" alt="Banner 3" />	
+		    </li>		    
+		  </ul>
+		</div>	
+	</section>
+
+	 <!-- test -->
+	 <section>
+    <div class="tm-white-bg section-padding-bottom">
+        <div class="main-section">
+            <div class="registration-section">
+                <h2>register or sign in</h2>
+                        <div class="register-form">
+                            <div class="login-form">
+                                <form action="/login/create" method="post">
+                                    <input type="email" name="email"  placeholder="User Email">
+                                    <input type="password" name="password"  placeholder="Password">
+                                    <span><input type="checkbox" name="rememberme">Remember Me</span>
+                                    <input type="submit" value="login">
+                                </form>
+                            </div>
+                            <div class="registration-form">
+                                <form action="/register/create" method="post">
+                                    <input type="text" name="name" placeholder="User name">
+                                    <input type="text" name="email" placeholder="Email">
+                                    <input type="password" name="password" placeholder="Password">
+                                    <input type="password" name="cpassword" placeholder="Confirm Password">
+                                    <input type="submit" value="Register">
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+            </div>
+        </div>
+	</section>
+    <!-- /test -->
+
+	<!-- gray bg -->	
+	
+	<%-include('common/footer')%>
+
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->
+	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
+	<script type="text/javascript" src="js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
+	<script>
+		$('.flexslider').flexslider({
+		  		controlNav: false,
+		  		directionNav: false
+		  	});
+
+	</script>
+</body>
+</html>
