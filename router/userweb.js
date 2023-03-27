@@ -12,5 +12,6 @@ route.get('/logout', controller.logout);
 route.get('/tour',controller.tour)
 route.get('/about',controller.about)
 route.get('/redirect',controller.redirect)
+route.get('/redirect2',controller.redirect2)
 
 module.exports = route

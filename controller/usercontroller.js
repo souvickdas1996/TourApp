@@ -107,6 +107,11 @@ const tour = (req,res)=>{
 const redirect = (req,res)=>{
     res.render('redirectpage')
 }
+
+const redirect2 = (req,res)=>{
+    res.render('redirectpage2')
+}
+
 module.exports = {
-    index,contact,register_create,login,loginCreate,logout, about,tour,redirect
+    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2
 }

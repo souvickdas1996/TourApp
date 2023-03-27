@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%-include('common/head')%>
+
+<body>
+	<!-- Header -->
+	<%-include('common/nav')%>
+
+    <div class="section">
+        <img src="img/banner-1.jpg" alt="image" class="img-responsive">
+        <br>
+        <div class="row">				
+            <div class="tm-section-header">
+                <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h2 class="tm-section-title">Paris</h2></div>
+                <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>	
+            </div>
+        </div>
+
+        <div class="container tm-home-section-1">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae omnis aliquid ullam totam quidem dolorem sed! Ad, consectetur quisquam totam, ducimus voluptates voluptatibus alias natus modi itaque, autem rerum sunt explicabo nihil molestias atque quas voluptatem esse aut officiis? Labore reprehenderit odit deleniti nobis doloribus error modi ipsum eaque tempore cumque eum unde, quas reiciendis vitae veritatis accusamus voluptatem, magni, neque repellat ducimus itaque consequuntur fugiat debitis? Temporibus earum, dolor doloremque quasi quos id maxime quis illo in itaque at assumenda molestiae mollitia excepturi, sit autem, impedit cumque ipsam.</p>
+        </div>
+    </div>
+
+    <section class="container tm-home-section-1">
+        <div class="section-margin-top">
+            <div class="row">				
+                <div class="tm-section-header">
+                    <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6"><h2 class="tm-section-title">Spots we are goning visiti</h2></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3"><hr></div>	
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="tm-tours-box-1">
+                        <img src="img/tours-03.jpg" alt="image" class="img-responsive">
+                        
+                    </div>					
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="tm-tours-box-1">
+                        <img src="img/tours-04.jpg" alt="image" class="img-responsive">
+                       
+                    </div>					
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="tm-tours-box-1">
+                        <img src="img/tours-05.jpg" alt="image" class="img-responsive">
+                    </div>					
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="tm-tours-box-1">
+                        <img src="img/tours-06.jpg" alt="image" class="img-responsive">
+                    </div>					
+                </div>
+            </div>		
+        </div>
+    </section>
+
+    <a href="/redirect" class="tm-tours-box-2-link">Book Now</a>
+
+
+
+	<!-- Banner -->
+	
+
+	<!-- gray bg -->	
+    <%-include('common/footer')%>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->
+	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
+	<script type="text/javascript" src="js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
+	<script>
+        $(function() {
+
+// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+  // Google Map
+});
+	</script>
+</body>
+</html>
