@@ -13,5 +13,6 @@ route.get('/tour',controller.tour)
 route.get('/about',controller.about)
 route.get('/redirect',controller.redirect)
 route.get('/redirect2',controller.redirect2)
+route.get('/payment',controller.payment)
 
 module.exports = route

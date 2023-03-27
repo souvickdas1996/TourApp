@@ -112,6 +112,9 @@ const redirect2 = (req,res)=>{
     res.render('redirectpage2')
 }
 
+const payment = (req,res)=>{
+    res.render('payment')
+}
 module.exports = {
-    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2
+    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment
 }
