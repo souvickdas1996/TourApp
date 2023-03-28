@@ -13,13 +13,31 @@ const securePassword = (password)=>{
 
 
 const index = (req,res)=>{
-    res.render('index')
+    if (req.user) {
+        User.find().then((userdetails) => {
+            if (userdetails) {
+                res.render('index',{
+                    data:req.user,
+                    details:userdetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    } else {
+        res.render('index', {
+            data:User.find()
+        })
+    }
 }
 
 const contact = (req,res)=>{
     res.render('contact', {
-         message2: req.flash('message2'),
         data: User.find(),
+        message1:req.flash("message1"),
         message2:req.flash("message2")
     })
 }
@@ -36,7 +54,7 @@ const register_create =(req,res)=>{
     .then(
         data =>{
             req.flash('message1',"register successfully ")
-            res.redirect('/redirect');
+            res.redirect('/contact');
         }
     )
     .catch(err=>{
@@ -53,8 +71,8 @@ const login = (req,res)=>{
     }
 
     res.render('contact',{
-        message1:req.flash('message1'),
-        message2:req.flash('message2'),
+        // message1:req.flash('message1'),
+        // message2:req.flash('message2'),
         data: loginData
     })
 }
@@ -98,18 +116,90 @@ const logout =(req,res)=>{
 
 
 const about = (req,res)=>{
-    res.render('about')
+    if (req.user) {
+        User.find().then((userdetails) => {
+            if (userdetails) {
+                res.render('about',{
+                    data:req.user,
+                    details:userdetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    } else {
+        res.render('about', {
+            data:User.find()
+        })
+    }
 }
 const tour = (req,res)=>{
-    res.render('tours')
+    if (req.user) {
+        User.find().then((userdetails) => {
+            if (userdetails) {
+                res.render('tours',{
+                    data:req.user,
+                    details:userdetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    } else {
+        res.render('tours', {
+            data:User.find()
+        })
+    }
 }
 
-const redirect = (req,res)=>{
-    res.render('redirectpage')
+const redirect =(req,res)=>{
+    if (req.user) {
+        User.find().then((userdetails) => {
+            if (userdetails) {
+                res.render('redirectpage',{
+                    data:req.user,
+                    details:userdetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    } else {
+        res.render('redirect', {
+            data:User.find()
+        })
+    }
 }
 
-const redirect2 = (req,res)=>{
-    res.render('redirectpage2')
+const redirect2 =(req,res)=>{
+    if (req.user) {
+        User.find().then((userdetails) => {
+            if (userdetails) {
+                res.render('redirectpage2',{
+                    data:req.user,
+                    details:userdetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    } else {
+        res.render('redirect2', {
+            data:User.find()
+        })
+    }
 }
 
 const payment = (req,res)=>{
