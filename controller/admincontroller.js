@@ -93,7 +93,7 @@ const dashboard = (req,res)=>{
         Admin.find().then((admindetails) => {
             if (admindetails) {
                 res.render('adminDashboard',{
-                    data:req.admin,
+                    admindata:req.admin,
                     details:admindetails, 
                 })
             }
