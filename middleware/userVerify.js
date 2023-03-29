@@ -1,31 +1,27 @@
-const User = require('../model/user');
+const User = require("../model/user");
 
-exports.duplicateVerify=(req,res,next)=>{
-    User.findOne({email:req.body.email}).then((email,err)=>{
-        if (err) {
-         console.log(err);
-         return err   
+exports.duplicateVerify = (req,res,next)=>{
+    User.findOne({email:req.body.email})
+    .then(data =>{
+        if(data){
+            req.flash("message2","Email Already Exists")
+            return res.redirect('/contact')
         }
-    
-        if (email) {
-            req.flash('message','email already exist')
-            return res.redirect('/register/create')
+        const {name,email,password,cpassword}=req.body ;
+        if(!(name && email && password && cpassword)){
+            req.flash("message2","All Inputs Are Required");
+            return res.redirect('/contact');
         }
-    
-        const password = req.body.password
-        const confirm = req.body.cpassword
-        const name = req.body.name
         
-        if (password!==confirm) {
-            req.flash('message','password doesnot match')
-            return res.redirect('/register/create')
-        }
-    
-        if (!(password && confirm && name)) {
-            req.flash('message','all input require')
-            return res.redirect('/register/create')
+        if(password !== cpassword){
+            req.flash("message2","Mismatched Password");
+            return res.redirect('/contact');
         }
 
         next()
+    })
+    .catch(err =>{
+        console.log(err);
+        next();
     })
 }

@@ -38,7 +38,8 @@ const contact = (req,res)=>{
     res.render('contact', {
         data: User.find(),
         message1:req.flash("message1"),
-        message2:req.flash("message2")
+        message2: req.flash("message2"),
+        message3:req.flash("message3")
     })
 }
 
@@ -53,12 +54,12 @@ const register_create =(req,res)=>{
     userModel.save()
     .then(
         data =>{
-            req.flash('message1',"register successfully ")
+            req.flash('message1', "Register Done, Now LogIn ");
             res.redirect('/contact');
         }
     )
     .catch(err=>{
-        req.flash('message2',"user registration failed");
+        req.flash('message2',"User Registration Failed");
         res.rdirect('/contact');
     })
 }
@@ -71,8 +72,8 @@ const login = (req,res)=>{
     }
 
     res.render('contact',{
-        // message1:req.flash('message1'),
-        // message2:req.flash('message2'),
+        
+        message3:req.flash('message3'),
         data: loginData
     })
 }
@@ -95,12 +96,12 @@ const loginCreate = (req,res)=>{
                 console.log("login successfull",data);
                 res.redirect('/tour');
             }else{
-                req.flash('message2',"Incorrect password");
+                req.flash('message3',"Incorrect password");
                 res.redirect('/contact');
             }
             
         }else{
-            req.flash("message2","No user found please try with anothe email or register first")
+            req.flash("message3", "No User found");
             res.redirect('/contact')
         }
     })

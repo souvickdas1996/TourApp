@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const verify = require('../config/config')
+const verify = require('../config/config');
 
 exports.userjwt = (req,res,next)=>{
     if (req.cookies && req.cookies.userToken) {

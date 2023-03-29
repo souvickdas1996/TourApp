@@ -38,7 +38,7 @@ app.use(route)
 const adminRoute = require('./router/adminweb')
 app.use(adminRoute)
 
-const dbDriver = "mongodb+srv://souvickdas:Wu2xcQJgYIswpXfL@cluster0.jqfnjyb.mongodb.net/_AMEN";
+const dbDriver = "mongodb+srv://souvickdas:Wu2xcQJgYIswpXfL@cluster0.jqfnjyb.mongodb.net/_TourAppProject";
 mongoose.connect(dbDriver,{useNewUrlParser:true,useUnifiedTopology:true})
 .then((result)=>{
     app.listen(port,()=>{

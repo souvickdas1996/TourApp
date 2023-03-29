@@ -9,20 +9,36 @@
 
 	<!-- Banner -->
 	<section class="tm-banner">
-		<!-- Flexslider -->
-		<div class="flexslider flexslider-banner">
-		  <ul class="slides">
-		    <li>
-			    <div class="tm-banner-inner">
-					<h1 class="tm-banner-title">Your <span class="tm-yellow-text">Special</span> Tour</h1>
-					<p class="tm-banner-subtitle">For Upcoming Holiday Offers</p>
-					<a href="#more" class="tm-banner-link">Sign Up</a>	
-				</div>
-				<img src="img/banner-3.jpg" alt="Banner 3" />	
-		    </li>		    
-		  </ul>
-		</div>	
-	</section>
+    <!-- Flexslider -->
+    <div class="flexslider flexslider-banner">
+      <ul class="slides">
+        <li>
+            <div class="tm-banner-inner">
+                <h1 class="tm-banner-title">Find <span class="tm-yellow-text">The Best</span> Place</h1>
+                <p class="tm-banner-subtitle">For Your Holidays</p>
+                <a href="#more" class="tm-banner-link">Sign Up</a>	
+            </div>
+            <img src="img/banner-1.jpg" alt="Image" />	
+        </li>
+        <li>
+            <div class="tm-banner-inner">
+                <h1 class="tm-banner-title">Lorem <span class="tm-yellow-text">Ipsum</span> Dolor</h1>
+                <p class="tm-banner-subtitle">Wonderful Destinations</p>
+                <a href="#more" class="tm-banner-link">Sign Up</a>	
+            </div>
+          <img src="img/banner-2.jpg" alt="Image" />
+        </li>
+        <li>
+            <div class="tm-banner-inner">
+                <h1 class="tm-banner-title">Proin <span class="tm-yellow-text">Gravida</span> Nibhvell</h1>
+                <p class="tm-banner-subtitle">Velit Auctor</p>
+                <a href="#more" class="tm-banner-link">Sign Up</a>	
+            </div>
+          <img src="img/banner-3.jpg" alt="Image" />
+        </li>
+      </ul>
+    </div>	
+</section>
 
 	 <!-- test -->
 	 <section>
@@ -31,14 +47,29 @@
             <div class="registration-section">
                 <h2>register or sign in</h2>
                         <div class="register-form">
-                            <div class="login-form">
+							<div class="login-form">
                                 <form action="/login/create" method="post">
                                     <input type="email" name="email"  placeholder="User Email">
                                     <input type="password" name="password"  placeholder="Password">
                                     <span><input type="checkbox" name="rememberme">Remember Me</span>
                                     <input type="submit" value="login">
                                 </form>
+			   <br><br><br><br> <%if(message3.length>0){%>
+                               <span class="alert alert-danger" role="alert" style="padding: 10px;">
+                                    <%=message3%>
+					            </span>
+                                    <%}%>
                             </div>
+							<%if(message1.length>0){%>
+                                 <span class="alert alert-success" role="alert" style="padding: 5px">
+                                        <%=message1%>
+				                  </span>
+                                           <%}%>
+                            <%if(message2.length>0){%>
+                                    <span class="alert alert-danger" role="alert" style="padding: 5px;">
+                                         <%=message2%>
+					                </span>
+                                        <%}%>
                             <div class="registration-form">
                                 <form action="/register/create" method="post">
                                     <input type="text" name="name" placeholder="User name">
