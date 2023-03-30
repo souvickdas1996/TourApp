@@ -79,22 +79,22 @@
            class="list-group-item list-group-item-action py-2 ripple"
            ><i class="fas fa-users fa-fw me-3"></i><span>Users</span></a
           >
-        <a
-           href="/admin/reviews"
+        <!-- <a
+           href="/admin/update"
            class="list-group-item list-group-item-action py-2 ripple"
-           ><i class="fas fa-money-bill fa-fw me-3"></i><span>Users reviews</span></a
-          >
-          <a
+           ><i class="fas fa-money-bill fa-fw me-3"></i><span>Tour plan</span></a
+          > -->
+          <!-- <a
           href="/admin/dashboard/upcomming"
           class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-money-bill fa-fw me-3"></i><span>upcomming</span></a
-         >
+         > -->
         
-         <a
-         href="/admin/dashboard/comment"
+         <!-- <a
+         href="/admin/dashboard/reviews"
          class="list-group-item list-group-item-action py-2 ripple"
-         ><i class="fas fa-money-bill fa-fw me-3"></i><span>comments</span></a
-        >
+         ><i class="fas fa-money-bill fa-fw me-3"></i><span>password</span></a
+        > -->
 
 
 
@@ -135,34 +135,7 @@
         <!-- Avatar -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="/admin/logout">Logout </a>
-          <!-- <a
-             class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-             href="#"
-             id="navbarDropdownMenuLink"
-             role="button"
-             data-mdb-toggle="dropdown"
-             aria-expanded="false"
-             >
-            <img
-                 src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                 class="rounded-circle"
-                 height="22"
-                 alt=""
-                 loading="lazy"
-                 />
-              <span class="nav-item active">
-                <a class="nav-link " href="/admin/logout">Logout</a>
-              </span> -->
          
-
-          <!-- <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-              >
-            <li><a class="dropdown-item" href="#">My profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-          </ul> -->
         </li>
       </ul>
     </div>
@@ -170,15 +143,51 @@
   </nav>
 
   <main style="margin-top: 58px">
-  
-    <div class="container pt-4">
-      <div id="home">
-        <h1>Hello admin &nbsp; <%=admindata.name%></h1>
-      </div>
-      
+  <div class="container pt-4">
+     
+    <div class="output">   
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">name</th> 
+          <th scope="col">Email</th>
+          <th scope="col">Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(displayData.length> 0) {
+          for(data of displayData) {
+          %>
+          <tr>
+            <td>
+              <%=data._id %>
+            </td>
+             <td>
+              <%=data._name %>
+            </td> 
 
-    </div>
-  
+            <td>
+              <%=data.email %>
+            </td>
+
+            <% if(data.status) {%>
+              <td>
+                <a href="deactiveuser/<%=data._id %>" class="btn btn-danger">Deactive</a>
+              </td>
+              <% } else{%>
+                <td>
+                  <a href="activeuser/<%=data._id %>" class="btn btn-success">Active</a>
+                </td>
+                <% } %>
+          </tr>
+          <% } } %>
+    </table>
+  </div> 
+
+
+
+   </div>
   </main>
   
     

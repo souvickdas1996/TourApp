@@ -1,4 +1,5 @@
 const Admin = require('../model/admin');
+const user = require('../model/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const verify = require('../config/config')
@@ -106,11 +107,57 @@ const dashboard = (req,res)=>{
     }
 }
 
+const users = (req,res)=>{
+    user.find().then(result=>{
+       res.render("users",{
+           title:"Admin | Users",
+           displayData:result
+       })
+    }) .catch(err=>{
+       console.log(err);
+    })  
+   }
+   
+   const activeUser = (req, res) => {
+    UserModel.findByIdAndUpdate(req.params.id, {
+        status: true
+    }).then(result => {
+        console.log("User Activeted...");
+        res.redirect("/admin/users");
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+
+
+const reviews = (req,res)=>{
+    if (req.admin) {
+        Admin.find().then((admindetails) => {
+            if (admindetails) {
+                res.render('reviews',{
+                    admindata:req.admin,
+                    details:admindetails, 
+                })
+            }
+            else{
+                console.log("no data found");
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+}
+
+
+
 const logout = (req,res)=>{
     res.clearCookie('adminToken')
     res.redirect('/admin/login')
 }
 
 module.exports = {
-    create,data,login,update,authadmin,dashboard,logout
+    create,data,login,update,authadmin,dashboard,logout,
+
+reviews,users,activeUser,
 }
