@@ -171,15 +171,10 @@
               <%=data.email %>
             </td>
 
-            <% if(data.status) {%>
-              <td>
-                <a href="deactiveuser/<%=data._id %>" class="btn btn-danger">Deactive</a>
-              </td>
-              <% } else{%>
-                <td>
-                  <a href="activeuser/<%=data._id %>" class="btn btn-success">Active</a>
-                </td>
-                <% } %>
+            <td>
+              <a href="deleteuser/<%=data._id %>" class="btn btn-danger"> Soft Delete</a>
+            </td>
+            
           </tr>
           <% } } %>
     </table>

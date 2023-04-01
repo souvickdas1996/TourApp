@@ -9,7 +9,7 @@ const cookie = require('cookie-parser');
 const mongoose = require('mongoose');
 const userAuth = require('./middleware/userAuth')
 const adminAuth = require('./middleware/adminAuth')
-const port = 2000
+const port = 2004
 const app = express()
 
 app.use(express.urlencoded({extended:true}))

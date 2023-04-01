@@ -11,6 +11,13 @@ route.post('/login/create', controller.loginCreate);
 route.get('/logout', controller.logout);
 route.get('/tour',controller.tour)
 route.get('/about',controller.about)
+
+
+route.get("/viewcmnt", controller.viewcmnt);
+route.post('/comment',controller.comment)
+
+
+
 route.get('/redirect',controller.redirect)
 route.get('/redirect2',controller.redirect2)
 route.get('/payment',controller.payment)

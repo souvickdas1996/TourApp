@@ -5,3 +5,7 @@ prasanta@gmail.com
 user
 bubun@gmail.com
 654321
+
+admin 
+admin@gmail.com
+12345

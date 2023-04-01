@@ -118,17 +118,18 @@ const users = (req,res)=>{
     })  
    }
    
-   const activeUser = (req, res) => {
-    UserModel.findByIdAndUpdate(req.params.id, {
-        status: true
-    }).then(result => {
-        console.log("User Activeted...");
-        res.redirect("/admin/users");
+
+
+const deleteUser = (req, res) => {
+    user.findByIdAndRemove(req.params.id, {status:0})
+    .then(result => {
+         console.log("User Deleted...");
+         res.redirect("/admin/users");
     }).catch(err => {
         console.log(err);
+        res.redirect("/admin/users");
     })
 }
-
 
 
 const reviews = (req,res)=>{
@@ -159,5 +160,6 @@ const logout = (req,res)=>{
 module.exports = {
     create,data,login,update,authadmin,dashboard,logout,
 
-reviews,users,activeUser,
+reviews,users,deleteUser,
+//activeUser
 }

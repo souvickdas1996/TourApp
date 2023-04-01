@@ -1,7 +1,9 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const verify = require('../config/config');
+const CommentModel = require('../model/comment');
 const User = require('../model/user');
+const { data } = require('./admincontroller');
 
 
 const securePassword = (password)=>{
@@ -137,6 +139,19 @@ const about = (req,res)=>{
         })
     }
 }
+
+const viewcmnt = (req, res) => {
+   
+}
+
+
+
+const comment =(req,res)=>{
+    
+}
+
+
+
 const tour = (req,res)=>{
     if (req.user) {
         User.find().then((userdetails) => {
@@ -207,5 +222,7 @@ const payment = (req,res)=>{
     res.render('payment')
 }
 module.exports = {
-    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment
+    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment,
+
+    viewcmnt,comment,
 }

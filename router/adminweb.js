@@ -19,10 +19,7 @@ route.get('/admin/logout',controller.logout)
 
 route.get('/admin/dashboard/reviews',controller.authadmin,controller.reviews)
 
-
-
-//router.get("/activeuser/(:id)", controller.adminAuth,controller.activeUser);
-//router.get("/deactiveuser/(:id)", AdminController.adminAuth, AdminController.deActiveUser);
+route.get("/admin/deleteuser/(:id)", controller.authadmin,controller.deleteUser);
 
 
 
