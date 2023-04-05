@@ -1,5 +1,7 @@
 const Admin = require('../model/admin');
 const user = require('../model/user');
+const Booking = require('../model/payment')
+const Tour = require('../model/tourcms')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const verify = require('../config/config')
@@ -157,8 +159,54 @@ const logout = (req,res)=>{
     res.redirect('/admin/login')
 }
 
+const booking = (req,res)=>{
+    Booking.find().then((data) => {
+        res.render('bookinghistory',{
+            bookingdata:data
+        })
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
+const tourCMS = (req,res)=>{
+    res.render('toursCMS')
+}
+
+const updatetourCMS = (req,res)=>{
+    console.log("tour cms data",req.body);
+    const{ placename,description,startingdate,duration,Price,personcount} = req.body
+    const tourmodel = new Tour({
+        placename:placename,
+        description:description,
+        startingdate:startingdate,
+        duration:duration,
+        Price:Price,
+        personcount:personcount
+    })
+
+    tourmodel.save().then((result) => {
+        res.redirect('/admin/showtourscms')
+    }).catch((err) => {
+        console.log(err);
+        res.redirect('/admin/tourscms')
+    });
+}
+
+const showtourCMS = (req,res)=>{
+    Tour.find().then((data) => {
+        res.render('showtoursCMS',{
+            tourcmsdata:data
+        })
+
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
+
 module.exports = {
-    create,data,login,update,authadmin,dashboard,logout,
+    create,data,login,update,authadmin,dashboard,logout,booking,tourCMS,updatetourCMS,showtourCMS,
 
 reviews,users,deleteUser,
 //activeUser

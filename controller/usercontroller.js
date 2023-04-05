@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const verify = require('../config/config');
 const CommentModel = require('../model/comment');
 const User = require('../model/user');
-const { data } = require('./admincontroller');
+const Payment = require('../model/payment')
 
 
 const securePassword = (password)=>{
@@ -190,7 +190,7 @@ const redirect =(req,res)=>{
             console.log(err);
         });
     } else {
-        res.render('redirect', {
+        res.render('redirectpage', {
             data:User.find()
         })
     }
@@ -212,17 +212,40 @@ const redirect2 =(req,res)=>{
             console.log(err);
         });
     } else {
-        res.render('redirect2', {
+        res.render('redirectpage2', {
             data:User.find()
         })
     }
 }
 
 const payment = (req,res)=>{
-    res.render('payment')
+     res.render('payment',{
+        message4:req.flash('message4')
+     })
+}
+
+const paymentData = (req,res)=>{
+    console.log('booking details',req.body);
+    const paymentmodel = new Payment({
+        name:req.body.name,
+        email:req.body.email,
+        phone:req.body.phone,
+        packagename:req.body.packagename,
+        personcount:req.body.personcount,
+    })
+    paymentmodel.save().then((result) => {
+        req.flash('message4','booking done')
+        res.redirect('/payment')
+    }).catch((err) => {
+        req.flash('message4','error')
+        res.redirect('/')
+        console.log(err);
+    });
+
+    
 }
 module.exports = {
-    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment,
+    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment,paymentData,
 
     viewcmnt,comment,
 }

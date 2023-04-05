@@ -21,5 +21,6 @@ route.post('/comment',controller.comment)
 route.get('/redirect',controller.redirect)
 route.get('/redirect2',controller.redirect2)
 route.get('/payment',controller.payment)
+route.post('/paymentdata',controller.paymentData)
 
 module.exports = route
