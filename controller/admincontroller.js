@@ -175,14 +175,15 @@ const tourCMS = (req,res)=>{
 
 const updatetourCMS = (req,res)=>{
     console.log("tour cms data",req.body);
-    const{ placename,description,startingdate,duration,Price,personcount} = req.body
+    const{ placename,description,startingdate,duration,price,personcount,ourtourdescription} = req.body
     const tourmodel = new Tour({
         placename:placename,
         description:description,
         startingdate:startingdate,
         duration:duration,
-        Price:Price,
-        personcount:personcount
+        price:price,
+        personcount:personcount,
+        ourtourdescription:ourtourdescription,
     })
 
     tourmodel.save().then((result) => {

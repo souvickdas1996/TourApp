@@ -4,6 +4,7 @@ const verify = require('../config/config');
 const CommentModel = require('../model/comment');
 const User = require('../model/user');
 const Payment = require('../model/payment')
+const Tour = require('../model/tourcms')
 
 
 const securePassword = (password)=>{
@@ -15,26 +16,16 @@ const securePassword = (password)=>{
 
 
 const index = (req,res)=>{
-    if (req.user) {
-        User.find().then((userdetails) => {
-            if (userdetails) {
-                res.render('index',{
-                    data:req.user,
-                    details:userdetails, 
-                })
-            }
-            else{
-                console.log("no data found");
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
-    } else {
+    Tour.find().then((data) => {
         res.render('index', {
-            data:User.find()
+            tourdata:data
         })
+        
+    }).catch((err) => {
+        console.log(err);
+    });
+        
     }
-}
 
 const contact = (req,res)=>{
     res.render('contact', {
@@ -153,25 +144,13 @@ const comment =(req,res)=>{
 
 
 const tour = (req,res)=>{
-    if (req.user) {
-        User.find().then((userdetails) => {
-            if (userdetails) {
-                res.render('tours',{
-                    data:req.user,
-                    details:userdetails, 
-                })
-            }
-            else{
-                console.log("no data found");
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
-    } else {
-        res.render('tours', {
-            data:User.find()
-        })
-    }
+   Tour.find().then((data) => {
+    res.render('tours',{
+        maintourdata:data
+    })
+   }).catch((err) => {
+    console.log(err);
+   });
 }
 
 const redirect =(req,res)=>{

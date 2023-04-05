@@ -17,7 +17,7 @@ const tourSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    Price:{
+    price:{
         type:String,
         require:true
     },
@@ -25,6 +25,10 @@ const tourSchema = new mongoose.Schema({
         type:String,
         require:true
     },
+    ourtourdescription:{
+        type:String,
+        require:true
+    }
 })
 
 const tourModel = mongoose.model('tourcms',tourSchema)
