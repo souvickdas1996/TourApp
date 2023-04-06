@@ -150,7 +150,7 @@
 			<div class="row">
 				<div class="tm-section-header section-margin-top">
 					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Tourist comments</h2></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Tourist reviews</h2></div>
 					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
 				</div>				
 			</div>
@@ -160,16 +160,45 @@
 
 				<!-- Testimonial -->
 
-				<div class="artical-commentbox">
-					<h3>leave a comment</h3>
-					<div class=></div> 
-					<div class="table-form">
-						<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" name="name">
-						<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" name="email">
-
+				<head>
+					<title>Comment Box</title>
+					<style>
+						input[type="text"], 
+						input[type="email"], 
+						textarea {
+							display: block;
+							width: 40%;
+							margin-bottom: 10px;
+							padding: 10px;
+							border-radius: 4px;
+							border: 1px solid #ccc;
+							box-sizing: border-box;
+						}
+						
+						button[type="submit"] {
+							background-color: #008CBA;
+							color: #fff;
+							padding: 10px 20px;
+							border: none;
+							border-radius: 4px;
+							cursor: pointer;
+						}
+						
+						button[type="submit"]:hover {
+							background-color: #005D7E;
+						}
+					</style>
+				</head>
+				<body>
+					<div>
+						<form>
+							<input type="text" name="name" placeholder="Name" required>
+							<input type="email" name="email" placeholder="Email" required>
+							<textarea name="reviews" rows="5" placeholder="reviews" required></textarea>
+							<button type="submit">Submit</button>
+						</form>
 					</div>
-				</div>
-
+				</body>
 
 
 				

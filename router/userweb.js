@@ -14,6 +14,7 @@ route.get('/about',controller.about)
 
 
 route.get("/viewcmnt", controller.viewcmnt);
+
 route.post('/comment',controller.comment)
 
 
