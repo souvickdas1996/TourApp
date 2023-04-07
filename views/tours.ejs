@@ -53,7 +53,7 @@
 							<div class="tm-tours-box-1-info-left">
 								<p class="text-uppercase margin-bottom-20"> <%=result.placename%> </p>	
 								<p class="gray-text"><%=result.startingdate%></p>
-								<p class="gray-text">Number of Travelers : <%=result.personcount%> person</p>
+								<p class="gray-text">Number of Travelers : <%=result.personcount%>persons</p>
 							</div>
 							<div class="tm-tours-box-1-info-right">
 								<p class="gray-text tours-1-description"><%=result.ourtourdescription%>	
@@ -63,7 +63,7 @@
 							<div class="tm-tours-box-1-link-left">
 								Duration: <%=result.duration%>
 							</div>
-							<a href="/redirect" class="tm-tours-box-1-link-right">
+							<a href="/redirect/<%=result._id%>" class="tm-tours-box-1-link-right">
 								<p>RS <%=result.price%></p>						
 							</a>							
 						</div>

@@ -75,11 +75,11 @@
 
 
 
-                <a href="/admin/showtourscms" class="list-group-item list-group-item-action py-2 ripple"><i
-                        class="fas fa-users fa-fw me-3"></i><span>Show Tour cms</span></a>
-
                 <a href="/admin/tourscms" class="list-group-item list-group-item-action py-2 ripple"><i
                         class="fas fa-users fa-fw me-3"></i><span>Tour cms</span></a>
+                
+                <a href="/admin/showtourscms" class="list-group-item list-group-item-action py-2 ripple"><i
+                        class="fas fa-users fa-fw me-3"></i><span>Show Tour cms</span></a>
 
 
                 <!-- <a
@@ -137,66 +137,52 @@
 
     <main style="margin-top: 58px">
         <div class="container pt-4">
-            <h2>tour cms Show</h2>
-           
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Place Name</th>
-                        <th scope="col">little Description</th>
-                        <th scope="col">Starting Date</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Person Count</th>
-                        <th scope="col">Ourtour Description</th>
-                        <th scope="col">Redirect Description</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%for(let result of tourcmsdata) {%>
-                        <tr>
-                            <td>
-                                <%=result.placename%>
-                            </td>
-                            
-                            <td>
-                                <%=result.description%>
-                            </td>
+            <h2>Edit tour cms</h2>
+            <form action = "" method="post">
 
-                            <td>
-                                <%=result.startingdate%>
-                            </td>
+                <input type="hidden" value="<%=edata._id%>" name="s_id">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Place Name</label>
+                    <input type="text" class="form-control" name="placename" value="<%=edata.placename%>" id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <%=result.duration%>
-                            </td>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">little Description</label>
+                    <input type="text" class="form-control" name="description" value="<%=edata.description%>" id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <%=result.price%>
-                            </td>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Starting Date</label>
+                    <input type="text" class="form-control" name="startingdate" value="<%=edata.startingdate%>"id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <%=result.personcount%>
-                            </td>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Duration</label>
+                    <input type="text" class="form-control" name="duration" value="<%=edata.duration%>" id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <%=result.ourtourdescription%>
-                            </td>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                    <input type="text" class="form-control" name="price" value="<%=edata.price%>" id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <%=result.redirectdescription%>
-                            </td>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Person Count</label>
+                    <input type="text" class="form-control" name="personcount" value="<%=edata.personcount%>" id="exampleInputEmail1">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ourtour Description</label>
+                    <input type="text" class="form-control" name="ourtourdescription" value="<%=edata.ourtourdescription%>" id="exampleInputEmail1">
+                </div>
 
-                            <td>
-                                <a href="/admin/edittourscms/<%=result._id%>" class="btn btn-success">UPDATE</a>
-                            </td>
-                            
-                        </tr>
-                        <%}%>
-                </tbody>
-            </table>
+               <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> Redirect Description</label>
+                    <input type="text" class="form-control" name="redirectdescription" value="<%=edata.redirectdescription%>" id="exampleInputEmail1">
+                </div>
 
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </main>
 

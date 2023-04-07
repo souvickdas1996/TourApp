@@ -175,7 +175,7 @@ const tourCMS = (req,res)=>{
 
 const updatetourCMS = (req,res)=>{
     console.log("tour cms data",req.body);
-    const{ placename,description,startingdate,duration,price,personcount,ourtourdescription} = req.body
+    const{ placename,description,startingdate,duration,price,personcount,ourtourdescription,redirectdescription} = req.body
     const tourmodel = new Tour({
         placename:placename,
         description:description,
@@ -184,6 +184,7 @@ const updatetourCMS = (req,res)=>{
         price:price,
         personcount:personcount,
         ourtourdescription:ourtourdescription,
+        redirectdescription:redirectdescription
     })
 
     tourmodel.save().then((result) => {
@@ -205,9 +206,20 @@ const showtourCMS = (req,res)=>{
     });
 }
 
+const edittourCMS = (req,res)=>{
+    const id = req.params.id
+    Tour.findById(id).then((data) => {
+        res.render('edittourCMS',{
+            edata:data
+        })
+        
+    }).catch((err) => {
+        console.log(err);
+    });
+}
 
 module.exports = {
-    create,data,login,update,authadmin,dashboard,logout,booking,tourCMS,updatetourCMS,showtourCMS,
+    create,data,login,update,authadmin,dashboard,logout,booking,tourCMS,updatetourCMS,showtourCMS,edittourCMS,
 
 reviews,users,deleteUser,
 //activeUser

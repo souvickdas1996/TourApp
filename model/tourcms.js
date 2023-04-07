@@ -28,7 +28,11 @@ const tourSchema = new mongoose.Schema({
     ourtourdescription:{
         type:String,
         require:true
-    }
+    },
+    redirectdescription:{
+        type:String,
+        require:true
+    }    
 })
 
 const tourModel = mongoose.model('tourcms',tourSchema)

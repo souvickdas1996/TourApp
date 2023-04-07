@@ -154,26 +154,17 @@ const tour = (req,res)=>{
 }
 
 const redirect =(req,res)=>{
-    if (req.user) {
-        User.find().then((userdetails) => {
-            if (userdetails) {
-                res.render('redirectpage',{
-                    data:req.user,
-                    details:userdetails, 
-                })
-            }
-            else{
-                console.log("no data found");
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
-    } else {
-        res.render('redirectpage', {
-            data:User.find()
+    const id = req.params.id
+    Tour.findById(id).then((data) => {
+        res.render('redirectpage',{
+            redirectdata:data
+
         })
+    }).catch((err) => {
+        console.log(err);
+        res.render('index')
+    });
     }
-}
 
 const redirect2 =(req,res)=>{
     if (req.user) {
@@ -220,11 +211,19 @@ const paymentData = (req,res)=>{
         res.redirect('/')
         console.log(err);
     });
-
-    
 }
+
+const authuser = (req,res,next)=>{
+    if (req.user) {
+        console.log(req.user);
+        next()
+    } else {
+        res.redirect('/contact')
+    }
+}
+
 module.exports = {
-    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment,paymentData,
+    index,contact,register_create,login,loginCreate,logout, about,tour,redirect,redirect2,payment,paymentData,authuser,
 
     viewcmnt,comment,
 }

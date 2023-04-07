@@ -25,6 +25,7 @@ route.get("/admin/booking", controller.authadmin,controller.booking);
 route.get("/admin/tourscms", controller.authadmin,controller.tourCMS);
 route.post('/admin/updatetourcms',controller.updatetourCMS)
 route.get("/admin/showtourscms", controller.authadmin,controller.showtourCMS);
+route.get("/admin/edittourscms/:id", controller.authadmin,controller.edittourCMS);
 
 
 
