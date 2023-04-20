@@ -4,50 +4,49 @@
   <body class="tm-gray-bg">
   	<!-- Header -->
   	
-	  <div class="tm-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-					<a href="/" class="tm-site-name">Holiday</a>	
-				</div>
-				<div class="col-lg-6 col-md-8 col-sm-9">
-					<div class="mobile-menu-icon">
-					<i class="fa fa-bars"></i>
-				  </div>
-					<nav class="tm-nav">
-					  <ul>
-						 <li><a href="/">Home</a></li>
-						  <li><a href="/tour">Our Tours</a></li>
-						  <li><a href="/about">About</a></li>
-						  <li><a href="/contact">Login</a></li>
-						</ul>
-				  </nav>		
-				</div>				
-			</div>
-		</div>
-		</div>
+	  <%-include('common/nav')%>
 	<!-- Banner -->
 	
 	<%-include('common/slider')%>
 	<!-- gray bg -->	
-	<%-include('common/traveltable')%>
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+					<!-- Tab panes -->
+					<%for(let data of tourdata) {%>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
+							<img src="<%=data.Timage%>" alt="image" class="img-responsive">
+							<a href="/redirect2/<%=data._id%>">
+								<div class="tm-green-gradient-bg tm-city-price-container">
+									<span><%=data.ttDestination%></span>
+									<span><%=data.ttprice%></span>
+								</div>	
+							</a>			
+						</div>				
+					</div>
+					<%}%>
+		</div>
+	</section>		
+	
 	<!-- white bg -->
 	<section class="tm-white-bg section-padding-bottom">
 		<div class="container">
 			<div class="row">
 				<div class="tm-section-header section-margin-top">
 					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Popular Packages</h2></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Latest Packages</h2></div>
 					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
 				</div>
 			<%for(let result of tourdata) {%>
 				<div class="col-lg-6">
 					<div class="tm-home-box-3">
 						<div class="tm-home-box-3-img-container">
-							<img src="img/index-07.jpg" alt="image" class="img-responsive">	
+							<img src="/<%=result.image%>" alt="image" class="img-responsive">	
 						</div>						
 						<div class="tm-home-box-3-info">
-							<p class="tm-home-box-3-description"><%=result.description%>
+							<h4 style="margin-left: 30px;margin-top: 15px;" class="box-3-description"><%=result.description%></h4>
+							<h1  style="margin-left: 30px;margin-bottom: 22px;" class="box-3-description"> Location name :<%=result.placename%> <br> Durations: <%=result.duration%> <br> Starting date: <%=result.startingdate%></h1>
+							
 					        <div class="tm-home-box-2-container">
 								<a href="/redirect/<%=result._id%>" class="tm-tours-box-2-link">Book Now</a>
 							</div>
@@ -55,6 +54,18 @@
 					</div>					
 			     </div>
 				 <%}%>
+
+
+				 <div class="col-lg-6">
+									
+						
+					        <div class="tm-home-box-2-container" style="margin-top: 164px;">
+								<a href="/tour" class="tm-tours-box-2-link">Explore More </a>
+							</div>
+											
+									
+			     </div>
+				  
 			</div>		
 		</div>
 	</section>

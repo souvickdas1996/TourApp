@@ -8,6 +8,9 @@
  */
 
 /* CSS Resets */ 
+*{
+	font-family: 'Poppins', sans-serif;
+}
 ul,p {
 	margin: 0; 
 	padding: 0;
@@ -16,7 +19,9 @@ h1,h2,h3 {
 	margin: 0;
 	padding: 0;
 }
-h1,h2,h3,a,p { font-family: 'Open Sans', sans-serif; }
+h1,h2,h3,a,p { 
+	font-family: 'Poppins', sans-serif;
+} 
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -32,15 +37,15 @@ body { overflow-x: hidden; }
 }
 .tm-site-name-container { padding-top: 20px; }
 .tm-site-name {
-	color: #FCDD44;
+	color: #2bc76c;
 	font-size: 27px;
 	font-weight: 600;
 	text-transform: uppercase;
 }
-.tm-site-name:hover,
+/* .tm-site-name:hover,
 .tm-site-name:focus {
 	color: #FF720B;
-}
+} */
 .mobile-menu-icon { display: none; }
 .tm-nav {
 	display: block;
@@ -60,7 +65,7 @@ body { overflow-x: hidden; }
 .tm-nav li a.active,
 .tm-nav li a:focus,
 .tm-nav li a:hover {
-	background: #FCDD44;
+	background: #2bc76e;
 	color: #000;
 }
 
@@ -125,7 +130,7 @@ body { overflow-x: hidden; }
 	text-align: center;
 }
 .flexslider.flexslider-banner .flex-direction-nav a:before {
-	color: #FCDD44;
+	color: #1eb860;
 }
 .flex-direction-nav a {
 	height: 50px;
@@ -447,7 +452,7 @@ hr { border-top: 1px solid #111010; }
 	padding-top: 20px;
 	padding-bottom: 20px;
 	text-align: center;
-	background-color: #8C8C8C;
+	background-color: #2bc76c;
 	color: white;
 	text-transform: uppercase;
 	transition: all 0.3s ease;
@@ -455,7 +460,7 @@ hr { border-top: 1px solid #111010; }
 .tm-tours-box-2-link:hover,
 .tm-tours-box-2-link:focus {
 	color: white;
-	background-color: #E8BA0F;
+	background-color: #1D98B9;
 }
 
 .margin-bottom-15 { margin-bottom: 15px; }
@@ -610,7 +615,7 @@ hr { border-top: 1px solid #111010; }
 }
 .contact-image { 
 	float: left; 
-	widthh: 100%;
+	width: 100%;
 	max-width: 494px;
 }
 .contact-text {
@@ -817,7 +822,7 @@ hr { border-top: 1px solid #111010; }
 		padding: 12px 30px;
 		margin-top: 10px;
 	}
-/* 	.tm-banner, .flexslider.flexslider-banner .slides img { height: 500px; } */
+	.tm-banner, .flexslider.flexslider-banner .slides img { height: 500px; }
 	.tm-home-box-1 {
 		margin-left: auto;
 		margin-right: auto;

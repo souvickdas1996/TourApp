@@ -2,10 +2,10 @@
 <html lang="en">
 <%-include('common/head')%>
 
-  <body class="tm-gray-bg">
+ 
   	<!-- Header -->
-	  <%-include('common/nav')%>
-
+	  
+<%-include('common/nav')%>
 	
 	<!-- Banner -->
 	<%-include('common/slider')%>
@@ -17,13 +17,15 @@
 			<!-- slider -->
 			<div class="flexslider flexslider-about effect2">
 			  <ul class="slides">
+				<%for(let result of commentdata){%>
+
 			    <li>
 			      <img src="img/about-1.jpg" alt="image" />
 			      <div class="flex-caption">
-			      	<h2 class="slider-title">Welcome To Holiday</h2>
-			      	<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor</h3>
-			      	<p class="slider-description">Holiday is free Bootstrap v3.3.5 responsive template for tour and travel websites. You can download and use this layout for any purpose. You do not need to provide a credit link to us. If you have any question, feel free to <a href="http://www.facebook.com/templatemo" target="_parent">contact us</a>. <br><br>
-                    Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum.</p>
+			      	<h2 class="slider-title">Comment Zone</h2>
+			      	<h2 class="slider-subtitle">User name : <%=result.name%></h2>
+			      	<h3 class="slider-description">Comment : <%=result.comment%></h3>
+			      	<h5 class="slider-description">Time : <p><%=result.createdAt%></p></h5>
 			      	<div class="slider-social">
 			      		<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
 			      		<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
@@ -32,49 +34,7 @@
 			      	</div>
 			      </div>			      
 			    </li>
-			    <li>
-			      <img src="img/about-1.jpg" alt="image" />
-			      <div class="flex-caption">
-			      	<h2 class="slider-title">Thank you for choosing us!</h2>
-			      	<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor, nisi elit consequat ipsum</h3>
-			      	<p class="slider-description">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<br><br>
-                    Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris gestas quam, ut aliquam massa nisi.</p>
-			      	<div class="slider-social">
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
-			      	</div>
-			      </div>			      
-			    </li>
-			    <li>
-			      <img src="img/about-1.jpg" alt="image" />
-			      <div class="flex-caption">
-			      	<h2 class="slider-title">More Programs to come</h2>
-			      	<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor, nisi elit consequat ipsum</h3>
-			      	<p class="slider-description">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris gestas quam, ut aliquam massa nisi.</p>
-			      	<div class="slider-social">
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
-			      	</div>
-			      </div>			      
-			    </li>
-			    <li>
-			      <img src="img/about-1.jpg" alt="image" />
-			      <div class="flex-caption">
-			      	<h2 class="slider-title">Tour and Travel</h2>
-			      	<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor, nisi elit consequat ipsum</h3>
-			      	<p class="slider-description">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris gestas quam, ut aliquam massa nisi.</p>
-			      	<div class="slider-social">
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-			      		<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
-			      	</div>
-			      </div>			      
-			    </li>
+				<%}%>
 			  </ul>
 			</div>
 		</div>
@@ -157,104 +117,93 @@
 			<div class="row">
 
 
-
+			</div>
 				<!-- Testimonial -->
+	</div>
 
-				<div class="artical-commentbox">
-					<h3>leave a comment</h3>
-					<div class=></div> 
-					<div class="table-form">
-						<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" name="name">
-						<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" name="email">
+				
 
-					</div>
-				</div>
+  
+    <style>
+      /* CSS styles for the comment form */
+      .comment-form {
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      .comment-form form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .comment-form label {
+        font: weight 50px;
+        margin-bottom: 10px;
+      }
+
+      .comment-form input,
+      .comment-form textarea {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .comment-form button[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .comment-form button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+    </style>
+
+
+
+<div class="comment-form  col-lg-9 col-md-6 col-sm-6 col-xs-12 container-fluid" style="margin-left: 195px;">
+      <form method="post" action="/comment">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+
+  
 
 
 
 				
 	<!-- contact us -->
 
-	<section class="container tm-home-section-1" id="more">
-
-		<div class="row">
-			<div class="tm-section-header section-margin-top">
-				<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-				<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Contact Us</h2></div>
-				<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
-			</div>				
-		</div>
-
-		<div class="row">
-			<!-- slider -->
-			<div class="flexslider effect2 effect2-contact tm-contact-box-1">
-				<ul class="slides">
-					<li>
-						<img src="img/world-map.png" alt="image" class="contact-image" />
-						<div class="contact-text">
-							<h2 class="slider-title">Lorem Isum Dolor</h2>
-							<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor, nisi elit consequat ipsum</h3>
-							<p class="slider-description">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <br><br>
-                            Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris gestas quam, ut aliquam massa nisi.</p>
-							<div class="slider-social">
-								<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-								<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-								<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-								<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
-							</div>
-						</div>			      
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>		
+		
 	
 	<!-- white bg -->
-	<section class="section-padding-bottom">
+	<section class="section-margin-top">
 		<div class="container">
-			<div class="row">
-				<div class="tm-section-header section-margin-top">
-					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Contact Us</h2></div>
-					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
-				</div>				
-			</div>
-			<div class="row">
-				<!-- contact form -->
-				<form action="#" method="post" class="tm-contact-form">
-					<div class="col-lg-6 col-md-6">
-						<div id="google-map"></div>
-						<div class="contact-social">
-							<a href="#" class="tm-social-icon tm-social-facebook"><i class="fa fa-facebook"></i></a>
-				      		<a href="#" class="tm-social-icon tm-social-dribbble"><i class="fa fa-dribbble"></i></a>
-				      		<a href="#" class="tm-social-icon tm-social-twitter"><i class="fa fa-twitter"></i></a>
-				      		<a href="#" class="tm-social-icon tm-social-instagram"><i class="fa fa-instagram"></i></a>
-				      		<a href="#" class="tm-social-icon tm-social-google-plus"><i class="fa fa-google-plus"></i></a>
-						</div>
-					</div> 
-					<div class="col-lg-6 col-md-6 tm-contact-form-input">
-						<div class="form-group">
-							<input type="text" id="contact_name" class="form-control" placeholder="NAME" />
-						</div>
-						<div class="form-group">
-							<input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
-						</div>
-						<div class="form-group">
-							<input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
-						</div>
-						<div class="form-group">
-							<textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE"></textarea>
-						</div>
-						<div class="form-group">
-							<button class="tm-submit-btn" type="submit" name="submit">Submit now</button> 
-						</div>               
-					</div>
-				</form>
+		
 			</div>			
 		</div>
 	</section>
 
-	<%-include('common/footer')%>
+	<div style="margin-top: 100px;">
+		<%-include('common/footer')%>
+	</div>
 
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
   	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->

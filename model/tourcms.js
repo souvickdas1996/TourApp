@@ -3,36 +3,111 @@ const mongoose = require('mongoose');
 const tourSchema = new mongoose.Schema({
     placename:{
         type:String,
-        require:true
+        require:false
     },
+    sidename:{
+        type:String,
+        require:false
+    },
+    
     description:{
         type:String,
-        require:true
+        require:false
     },
     startingdate:{
         type:String,
-        require:true
+        require:false
     },
     duration:{
         type:String,
-        require:true
+        require:false
     },
     price:{
         type:String,
-        require:true
+        require:false
     },
     personcount:{
         type:String,
-        require:true
+        require:false
     },
     ourtourdescription:{
         type:String,
-        require:true
+        require:false
     },
     redirectdescription:{
         type:String,
-        require:true
-    }    
+        require:false
+    },    
+    TRmage:{
+        type:String,
+        require:false
+    },
+    RBimage:{
+        type:String,
+        require:false
+    },
+    RS1image:{
+        type:String,
+        require:false
+    },
+    RS2image:{
+        type:String,
+        require:false
+    },
+    RS3image:{
+        type:String,
+        require:false
+    },
+    RS4image:{
+        type:String,
+        require:false
+    },
+    ttDestination:{
+        type:String,
+        require:false
+    },
+    ttprice:{
+        type:String,
+        require:false
+    },
+    ttdescription:{
+        type:String,
+        require:false
+    },
+    serialno:{
+        type:Number,
+        require:false
+    },
+    image:{
+        type:String,
+        require:false
+    },    
+    Timage:{
+        type:String,
+        require:false
+    },
+    TBimage:{
+        type:String,
+        require:false
+    },
+     TS1image:{
+        type:String,
+        require:false
+    },
+     TS2image:{
+        type:String,
+        require:false
+    },
+     TS3image:{
+        type:String,
+        require:false
+    },
+     TS4image:{
+        type:String,
+        require:false
+    }
+    
+
 })
 
 const tourModel = mongoose.model('tourcms',tourSchema)

@@ -138,12 +138,18 @@
     <main style="margin-top: 58px">
         <div class="container pt-4">
             <h2>Edit tour cms</h2>
-            <form action = "" method="post">
+            <form action = "/admin/editupdatetourscms" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" value="<%=edata._id%>" name="s_id">
+
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Place Name</label>
                     <input type="text" class="form-control" name="placename" value="<%=edata.placename%>" id="exampleInputEmail1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Side Category</label>
+                    <input type="text" class="form-control" placeholder="sea,mountain,national,international,nature,desert" name="sidename" id="exampleInputEmail1">
                 </div>
 
                 <div class="mb-3">
@@ -180,6 +186,90 @@
                     <label for="exampleInputEmail1" class="form-label"> Redirect Description</label>
                     <input type="text" class="form-control" name="redirectdescription" value="<%=edata.redirectdescription%>" id="exampleInputEmail1">
                 </div>
+
+
+
+                
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tour thumbnail api image link</label>
+                    <input type="text" class="form-control" name="TRmage"  value="<%=edata.TRmage%>" id="exampleInputEmail1">
+                </div>
+                 <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect main api image link</label>
+                    <input type="text" class="form-control" name="RBimage"  value="<%=edata.RBimage%>" id="exampleInputEmail1">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section1 api image link</label>
+                    <input type="text" class="form-control" name="RS1image"  value="<%=edata.RS1image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section2 api image link</label>
+                    <input type="text" class="form-control" name="RS2image"  value="<%=edata.RS1image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section3 api image link</label>
+                    <input type="text" class="form-control" name="RS3image"  value="<%=edata.RS1image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section4 api image link</label>
+                    <input type="text" class="form-control" name="RS4image"  value="<%=edata.RS1image%>" id="exampleInputEmail1">
+                </div>
+
+
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Destinationn</label>
+                    <input type="text" class="form-control" name="ttDestination" value="<%=edata.ttDestination%>"id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Price</label>
+                    <input type="text" class="form-control" name="ttprice" value="<%=edata.ttprice%>"id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Description</label>
+                    <input type="text" class="form-control" name="ttdescription" value="<%=edata.ttdescription%>" id="exampleInputEmail1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">serialNo</label>
+                    <input type="text" class="form-control" name="serialno"value="<%=edata.serialno%>" id="exampleInputEmail1">
+                </div>
+
+                <div class="mb-3">
+                    <label>Image</label>
+                    <input type="file" name="image" value="<%=edata.image%>" id="image">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tour api image link</label>
+                    <input type="text" class="form-control" name="Timage" value="<%=edata.Timage%>" id="exampleInputEmail1">
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect main api image link</label>
+                    <input type="text" class="form-control" name="TBimage" value="<%=edata.TBimage%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section1 api image link</label>
+                    <input type="text" class="form-control" name="TS1image" value="<%=edata.TS1image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section2 api image link</label>
+                    <input type="text" class="form-control" name="TS2image" value="<%=edata.TS2image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section3 api image link</label>
+                    <input type="text" class="form-control" name="TS3image" value="<%=edata.TS3image%>" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section4 api image link</label>
+                    <input type="text" class="form-control" name="TS4image"  value="<%=edata.TS4image%>"id="exampleInputEmail1">
+                </div>
+                
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

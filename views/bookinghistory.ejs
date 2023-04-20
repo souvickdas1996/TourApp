@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous"></script>
-    <title>register</title>
+    <title>BookingHistory</title>
 </head>
 
 <style>
@@ -113,7 +113,7 @@
 
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                Admin Panel
+                <h2>Booking History</h2>
             </a>
             <!-- Search form -->
 
@@ -134,13 +134,14 @@
 
     <main style="margin-top: 58px">
         <div class="container pt-4">
-            <h2>booking history</h2>
+            
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">phone</th>
+                        <th scope="col">StartingDate</th>
+                        <th scope="col">EndingDate</th>
                         <th scope="col">Package Name</th>
                         <th scope="col">Number of Travelers</th>
                         <th scope="col">Booking Time</th>
@@ -155,8 +156,11 @@
                             <td>
                                 <%=result.email%>
                             </td>
+                           <td>
+                                <%=result.startingdate%>
+                            </td>
                             <td>
-                                <%=result.phone%>
+                                <%=result.endingdate%>
                             </td>
                             <td>
                                 <%=result.packagename%> %>

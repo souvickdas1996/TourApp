@@ -4,28 +4,7 @@
 
   <body class="tm-gray-bg">
   	<!-- Header -->
-	  <div class="tm-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-					<a href="/" class="tm-site-name">Holiday</a>	
-				</div>
-				<div class="col-lg-6 col-md-8 col-sm-9">
-					<div class="mobile-menu-icon">
-					<i class="fa fa-bars"></i>
-				  </div>
-					<nav class="tm-nav">
-					  <ul>
-						 <li><a href="/">Home</a></li>
-						  <li><a href="/tour">Our Tours</a></li>
-						  <li><a href="/about">About</a></li>
-						  <li><a href="/contact">Login</a></li>
-						</ul>
-				  </nav>		
-				</div>				
-			</div>
-		</div>
-		</div>
+	 <%-include('common/nav')%>
 	
 	<!-- Banner -->
 	<%-include('common/slider')%>
@@ -33,10 +12,26 @@
 	<!-- gray bg -->	
 	<section class="container tm-home-section-1" id="more">
 		<div class="row">
-		<%-include('common/traveltable')%>
-	
 		<div class="section-margin-top">
-			<div class="row">				
+			<div class="row">
+				<!-- filter start -->
+				<!-- <nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+					  <div class="navbar-header">
+						<a class="navbar-brand" href="#">Travel Filter :</a>
+					  </div>
+					  <ul class="nav navbar-nav">
+						<li><a href="/tour">All Sides</a></li>
+						<li><a href="#">Sea Side</a></li>
+						<li><a href="#">Mountain Side</a></li>
+						<li><a href="#">National Side</a></li>
+						<li><a href="#">International Side</a></li>
+						<li><a href="#">Nature Side</a></li>
+						<li><a href="#">Desert Side</a></li>
+					  </ul>
+					</div>
+				  </nav> -->
+				<!--filter end  -->
 				<div class="tm-section-header">
 					<div class="col-lg-3 col-md-3 col-sm-3"><hr></div>
 					<div class="col-lg-6 col-md-6 col-sm-6"><h2 class="tm-section-title">Our Tours</h2></div>
@@ -44,11 +39,10 @@
 				</div>
 			</div>
 			<div class="row">
-
 				<%for(let result of maintourdata) {%>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="tm-tours-box-1">
-						<img src="img/tours-03.jpg" alt="image" class="img-responsive">
+						<img src="<%=result.TRmage%>" alt="image" class="img-responsive">
 						<div class="tm-tours-box-1-info">
 							<div class="tm-tours-box-1-info-left">
 								<p class="text-uppercase margin-bottom-20"> <%=result.placename%> </p>	

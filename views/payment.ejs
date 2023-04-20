@@ -4,27 +4,7 @@
 
 <body>
 	<!-- Header -->
-	<div class="tm-header">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-                  <a href="/" class="tm-site-name">Holiday</a>	
-              </div>
-              <div class="col-lg-6 col-md-8 col-sm-9">
-                  <div class="mobile-menu-icon">
-                  <i class="fa fa-bars"></i>
-                </div>
-                  <nav class="tm-nav">
-                    <ul>
-                       <li><a href="/">Home</a></li>
-                        <li><a href="/tour">Our Tours</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Login</a></li>
-                      </ul>
-                </nav>		
-              </div>				
-          </div>
-      </div>
+	<%-include('common/nav')%>
 
     <div class="container-fluid" style="padding-top: 72px;">
         <div class='row'>
@@ -45,12 +25,18 @@
                     <input class='form-control' name="email" size='4' type='text'>
                   </div>
                 </div>
-                 <div class='form-row'>
+                  <div class='form-row'>
                   <div class='col-xs-12 form-group required'>
-                    <label class='control-label'>Phone</label>
-                    <input class='form-control' name="phone" size='4' type='text'>
+                    <label class='control-label'>StartingDate</label>
+                    <input class='form-control' name="startingdate" size='4' type='text'>
                   </div>
                 </div>
+                <div class='form-row'>
+                  <div class='col-xs-12 form-group required'>
+                    <label class='control-label'>EndingDate</label>
+                    <input class='form-control' name="endingdate" size='4' type='text'>
+                  </div>
+                  </div>
                 <div class='form-row'>
                   <div class='col-xs-12 form-group required'>
                     <label class='control-label'>Package Name</label>
@@ -73,7 +59,23 @@
               </form>
             </div>
             <div class='col-md-4'></div>
-        </div>
+            </div>
+            <%if(message4.length>0){%>
+            <span class="alert alert-success" role="alert">
+                <%=message4%>
+				    </span>
+          <%}%>
+          <%if(message5.length>0){%>
+            <span class="alert alert-success" role="alert">
+                <%=message5%>
+				    </span>
+          <%}%>
+          <%if(message6.length>0){%>
+            <span class="alert alert-success" role="alert">
+                <%=message6%>
+				    </span>
+          <%}%>
+
     </div>
 	<!-- Banner -->
 	

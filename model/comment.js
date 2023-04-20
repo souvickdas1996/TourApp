@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CommentSchema = Schema({
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: "user"
-    },
+   
     name: {
         type: String,
         required: true
@@ -17,10 +14,6 @@ const CommentSchema = Schema({
     comment: {
         type: String,
         required: true
-    },
-    status: {
-        type: Boolean,
-        default: true
     },
     createdAt: {
         type: Date,

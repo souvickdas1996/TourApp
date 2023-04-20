@@ -4,32 +4,12 @@
 
 <body>
 	<!-- Header -->
-	<div class="tm-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-					<a href="/" class="tm-site-name">Holiday</a>	
-				</div>
-				<div class="col-lg-6 col-md-8 col-sm-9">
-					<div class="mobile-menu-icon">
-					<i class="fa fa-bars"></i>
-				  </div>
-					<nav class="tm-nav">
-					  <ul>
-						 <li><a href="/">Home</a></li>
-						  <li><a href="/tour">Our Tours</a></li>
-						  <li><a href="/about">About</a></li>
-						  <li><a href="/contact">Login</a></li>
-						</ul>
-				  </nav>		
-				</div>				
-			</div>
-		</div>
-		</div>
+	<%-include('common/nav')%>
+
 
 <section class="container tm-home-section-1">
     <div class="section" style="margin-top: 80px;">
-        <img src="img/banner-2.jpg" alt="image" class="img-responsive">
+        <img src="<%=redirectdata.RBimage%>" alt="image" class="img-responsive">
         <br>
         <div class="row">				
             <div class="tm-section-header">
@@ -57,24 +37,24 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tm-tours-box-1">
-                        <img src="img/tours-03.jpg" alt="image" class="img-responsive">
+                        <img src="<%=redirectdata.RS1image%>" alt="image" class="img-responsive">
                         
                     </div>					
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tm-tours-box-1">
-                        <img src="img/tours-04.jpg" alt="image" class="img-responsive">
+                        <img src="<%=redirectdata.RS2image%>" alt="image" class="img-responsive">
                        
                     </div>					
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tm-tours-box-1">
-                        <img src="img/tours-05.jpg" alt="image" class="img-responsive">
+                        <img src="<%=redirectdata.RS3image%>" alt="image" class="img-responsive">
                     </div>					
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="tm-tours-box-1">
-                        <img src="img/tours-06.jpg" alt="image" class="img-responsive">
+                        <img src="<%=redirectdata.RS4image%>" alt="image" class="img-responsive">
                     </div>					
                 </div>
             </div>		

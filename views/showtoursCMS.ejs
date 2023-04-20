@@ -116,7 +116,7 @@
 
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                Admin Panel
+               <h2>Tour CMS Details</h2>
             </a>
             <!-- Search form -->
 
@@ -137,12 +137,13 @@
 
     <main style="margin-top: 58px">
         <div class="container pt-4">
-            <h2>tour cms Show</h2>
+            
            
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Place Name</th>
+                        <th scope="col">Side Category</th>
                         <th scope="col">little Description</th>
                         <th scope="col">Starting Date</th>
                         <th scope="col">Duration</th>
@@ -150,6 +151,25 @@
                         <th scope="col">Person Count</th>
                         <th scope="col">Ourtour Description</th>
                         <th scope="col">Redirect Description</th>
+
+                        <th scope="col">TRmage</th>
+                        <th scope="col">RBimage</th>
+                        <th scope="col">RS1image</th>
+                        <th scope="col">RS2image</th>
+                        <th scope="col">RS3image</th>
+                        <th scope="col">RS4image</th>
+
+                        <th scope="col">TourTable Destination</th>
+                        <th scope="col">TourTable Price</th>
+                        <th scope="col">TourTable Description</th>
+                        <th scope="col">serial No</th>
+                        <th scope="col">image</th>
+                        <th scope="col">Timage</th>
+                        <th scope="col">TBimage</th>
+                        <th scope="col">TS1image</th>
+                        <th scope="col">TS2image</th>
+                        <th scope="col">TS3image</th>
+                        <th scope="col">TS4image</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -158,6 +178,9 @@
                         <tr>
                             <td>
                                 <%=result.placename%>
+                            </td>
+                            <td>
+                                <%=result.sidename%>
                             </td>
                             
                             <td>
@@ -187,6 +210,63 @@
                             <td>
                                 <%=result.redirectdescription%>
                             </td>
+                            
+                            <td>
+                                 <%=result.TRmage%>
+                            </td>
+
+                            <td>
+                                 <%=result.RBimage%>
+                            </td>
+                            <td>
+                                 <%=result.RS1image%>
+                            </td>
+                            <td>
+                                 <%=result.RS2image%>
+                            </td>
+                            <td>
+                                 <%=result.RS3image%>
+                            </td>
+                            <td>
+                                 <%=result.RS4image%>
+                            </td>
+                            
+
+                            <td>
+                                <%=result.ttDestination%>
+                            </td>
+                            <td>
+                                <%=result.ttprice%>
+                            </td>
+                            <td>
+                                <%=result.ttdescription%>
+                            </td>
+                            <td>
+                                <%=result.serialno%>
+                            </td>
+                            <td>
+                                <img src="/<%=result.image%>" alt="" width="50px" height="50px">
+                            </td>
+                            <td>
+                                 <%=result.Timage%>
+                            </td>
+
+                            <td>
+                                 <%=result.TBimage%>
+                            </td>
+                            <td>
+                                 <%=result.TS1image%>
+                            </td>
+                            <td>
+                                 <%=result.TS2image%>
+                            </td>
+                            <td>
+                                 <%=result.TS3image%>
+                            </td>
+                            <td>
+                                 <%=result.TS4image%>
+                            </td>
+                            
 
                             <td>
                                 <a href="/admin/edittourscms/<%=result._id%>" class="btn btn-success">UPDATE</a>

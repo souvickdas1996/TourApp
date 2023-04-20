@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const paymentSchema =new mongoose.Schema({
+const paymentSchema = new mongoose.Schema({
+       user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"user"
+        },
         name:{
             type:String,
             require:true
@@ -9,7 +13,11 @@ const paymentSchema =new mongoose.Schema({
             type:String,
             require:true
         },
-        phone:{
+        startingdate:{
+            type:String,
+            require:true
+         },
+        endingdate:{
             type:String,
             require:true
         },

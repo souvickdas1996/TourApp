@@ -137,11 +137,16 @@
     <main style="margin-top: 58px">
         <div class="container pt-4">
             <h2>tour cms</h2>
-            <form action = "/admin/updatetourcms" method="post">
+            <form action = "/admin/updatetourcms" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Place Name</label>
                     <input type="text" class="form-control" name="placename" id="exampleInputEmail1">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Side Category</label>
+                    <input type="text" class="form-control" placeholder="sea,mountain,national,international,nature,desert" name="sidename" id="exampleInputEmail1">
+                </div>
+                
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">little Description</label>
@@ -177,6 +182,87 @@
                     <label for="exampleInputEmail1" class="form-label"> Redirect Description</label>
                     <input type="text" class="form-control" name="redirectdescription" id="exampleInputEmail1">
                 </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tour thumbnail api image link</label>
+                    <input type="text" class="form-control" name="TRmage" id="exampleInputEmail1">
+                </div>
+                 <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect main api image link</label>
+                    <input type="text" class="form-control" name="RBimage" id="exampleInputEmail1">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section1 api image link</label>
+                    <input type="text" class="form-control" name="RS1image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section2 api image link</label>
+                    <input type="text" class="form-control" name="RS2image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section3 api image link</label>
+                    <input type="text" class="form-control" name="RS3image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section4 api image link</label>
+                    <input type="text" class="form-control" name="RS4image" id="exampleInputEmail1">
+                </div>
+
+
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Destination</label>
+                    <input type="text" class="form-control" name="ttDestination" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Price</label>
+                    <input type="text" class="form-control" name="ttprice" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourTable Description</label>
+                    <input type="text" class="form-control" name="ttdescription" id="exampleInputEmail1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">serialNo</label>
+                    <input type="text" class="form-control" name="serialno" id="exampleInputEmail1">
+                </div>
+
+                <div class="mb-3">
+                    <label>Image</label>
+                    <input type="file" name="image" id="image">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tour api image link</label>
+                    <input type="text" class="form-control" name="Timage" id="exampleInputEmail1">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect main api image link</label>
+                    <input type="text" class="form-control" name="TBimage" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section1 api image link</label>
+                    <input type="text" class="form-control" name="TS1image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section2 api image link</label>
+                    <input type="text" class="form-control" name="TS2image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section3 api image link</label>
+                    <input type="text" class="form-control" name="TS3image" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TourRedirect section4 api image link</label>
+                    <input type="text" class="form-control" name="TS4image" id="exampleInputEmail1">
+                </div>
+                
+
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

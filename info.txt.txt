@@ -1,11 +1,9 @@
-admin
-prasanta@gmail.com
+
+
+souvick
+souvick@gmail.com
 123456
 
-user
-bubun@gmail.com
-654321
-
-admin 
-admin@gmail.com
+Admin 
+Admin@gmail.com
 12345

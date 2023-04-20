@@ -5,7 +5,6 @@ const Tour = require('../model/tourcms')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const verify = require('../config/config')
-
 const createPassword = (password)=>{
 
     const salt = bcrypt.genSaltSync(10)
@@ -14,7 +13,8 @@ const createPassword = (password)=>{
 }
 
 const create = (req,res)=>{
-    res.render('adminlogin',{
+    res.render('adminlogin', {
+        title:"AdminLogin Page",
     message:req.flash('message'),
     data:Admin.find()
 })
@@ -48,7 +48,8 @@ const login = (req,res)=>{
         loginData.password = req.cookies.password || undefined
     }
 
-    res.render('adminform',{
+    res.render('adminform', {
+        title:"AdminForm Page",
         message:req.flash('message'),
         data:loginData,
     })
@@ -95,7 +96,8 @@ const dashboard = (req,res)=>{
     if (req.admin) {
         Admin.find().then((admindetails) => {
             if (admindetails) {
-                res.render('adminDashboard',{
+                res.render('adminDashboard', {
+                    title:"AdminDashboard Page",
                     admindata:req.admin,
                     details:admindetails, 
                 })
@@ -111,8 +113,8 @@ const dashboard = (req,res)=>{
 
 const users = (req,res)=>{
     user.find().then(result=>{
-       res.render("users",{
-           title:"Admin | Users",
+        res.render("users", {
+           title:"Users Page",
            displayData:result
        })
     }) .catch(err=>{
@@ -138,7 +140,8 @@ const reviews = (req,res)=>{
     if (req.admin) {
         Admin.find().then((admindetails) => {
             if (admindetails) {
-                res.render('reviews',{
+                res.render('reviews', {
+                    title:"Review Page",
                     admindata:req.admin,
                     details:admindetails, 
                 })
@@ -160,8 +163,9 @@ const logout = (req,res)=>{
 }
 
 const booking = (req,res)=>{
-    Booking.find().then((data) => {
-        res.render('bookinghistory',{
+    Booking.aggregate([{$sort:{startingdate:-1}}]).then((data) => {
+        res.render('bookinghistory', {
+            title:"BookingHistory Page",
             bookingdata:data
         })
     }).catch((err) => {
@@ -170,21 +174,46 @@ const booking = (req,res)=>{
 }
 
 const tourCMS = (req,res)=>{
-    res.render('toursCMS')
+    res.render('toursCMS', {
+        title:"ToursCMS Page"
+    })
 }
 
 const updatetourCMS = (req,res)=>{
     console.log("tour cms data",req.body);
-    const{ placename,description,startingdate,duration,price,personcount,ourtourdescription,redirectdescription} = req.body
+
+        const{ placename,sidename,description,startingdate,duration,price,personcount,ourtourdescription,redirectdescription,ttDestination,ttprice,ttdescription,serialno,Timage,TBimage,TS1image,TS2image,TS3image,TS4image,TRmage,RBimage,RS1image,RS2image,RS3image,RS4image } = req.body
+
     const tourmodel = new Tour({
         placename:placename,
+        sidename:sidename,
         description:description,
         startingdate:startingdate,
         duration:duration,
         price:price,
         personcount:personcount,
         ourtourdescription:ourtourdescription,
-        redirectdescription:redirectdescription
+        redirectdescription:redirectdescription,
+
+        
+        TRmage:TRmage,
+        RBimage:RBimage,
+        RS1image:RS1image,
+        RS2image:RS2image,
+        RS3image:RS3image,
+        RS4image:RS4image,
+
+        ttDestination:ttDestination,
+        ttprice:ttprice,
+        ttdescription:ttdescription,
+        serialno:serialno,
+        image:req.file.filename,
+        Timage:Timage,
+        TBimage:TBimage,
+        TS1image:TS1image,
+        TS2image:TS2image,
+        TS3image:TS3image,
+        TS4image:TS4image
     })
 
     tourmodel.save().then((result) => {
@@ -197,7 +226,8 @@ const updatetourCMS = (req,res)=>{
 
 const showtourCMS = (req,res)=>{
     Tour.find().then((data) => {
-        res.render('showtoursCMS',{
+        res.render('showtoursCMS', {
+            title:"ShowTourCMS Page",
             tourcmsdata:data
         })
 
@@ -209,7 +239,8 @@ const showtourCMS = (req,res)=>{
 const edittourCMS = (req,res)=>{
     const id = req.params.id
     Tour.findById(id).then((data) => {
-        res.render('edittourCMS',{
+        res.render('edittourCMS', {
+            title:"EditTourCMS Page",
             edata:data
         })
         
@@ -218,8 +249,81 @@ const edittourCMS = (req,res)=>{
     });
 }
 
+const editupdatetourCMS = (req,res)=>{
+const s_id = req.body.s_id
+const placename= req.body.placename
+const sidename= req.body.sidename
+const description= req.body.description
+const startingdate= req.body.startingdate
+const duration= req.body.duration
+const price= req.body.price
+const personcount= req.body.personcount
+const ourtourdescription= req.body.ourtourdescription
+const redirectdescription= req.body.redirectdescription
+
+
+
+const TRmage = req.body.TRmage
+const RBimage = req.body.RBimage
+const RS1image= req.body.RS1image
+const RS2image= req.body.RS2image
+const RS3image= req.body.RS3image
+const RS4image= req.body.RS4image
+
+const ttDestination= req.body.ttDestination
+const ttprice= req.body.ttprice
+const ttdescription= req.body.ttdescription
+const serialno= req.body.serialno
+const image=req.file.filename
+const Timage=req.body.Timage
+const TBimage=req.body.TBimage
+const TS1image=req.body.TS1image
+const TS2image=req.body.TS2image
+const TS3image=req.body.TS3image
+const TS4image=req.body.TS4image
+
+
+Tour.findById(s_id).then((result) => {
+    result.placename=placename,
+    result.sidename=sidename,
+    result.description=description,
+    result.startingdate=startingdate,
+    result.duration=duration,
+    result.price=price,
+    result.personcount=personcount,
+    result.ourtourdescription=ourtourdescription,
+    result.redirectdescription=redirectdescription,
+
+   
+    result.TRmage=TRmage,
+    result.RBimage=RBimage,
+    result.RS1image=RS1image,
+    result.RS2image=RS2image,
+    result.RS3image=RS3image,
+    result.RS4image=RS4image,
+
+    result.ttDestination=ttDestination,
+    result.ttprice=ttprice,
+    result.ttdescription=ttdescription,
+    result.serialno=serialno,
+    result.image=req.file.filename
+    result.Timage=Timage
+    result.TBimage=TBimage
+    result.TS1image=TS1image
+    result.TS2image=TS2image
+    result.TS3image=TS3image
+    result.TS4image=TS4image
+
+    return result.save().then((results) => {
+        res.redirect('/admin/showtourscms')
+    }).catch((err) => {
+        console.log(err);
+    });
+})
+}
+
 module.exports = {
-    create,data,login,update,authadmin,dashboard,logout,booking,tourCMS,updatetourCMS,showtourCMS,edittourCMS,
+    create,data,login,update,authadmin,dashboard,logout,booking,tourCMS,updatetourCMS,showtourCMS,edittourCMS,editupdatetourCMS,
 
 reviews,users,deleteUser,
 //activeUser
